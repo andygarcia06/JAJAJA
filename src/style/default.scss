@@ -1,0 +1,646 @@
+$theme-colors: (
+    "primary": #e63329,
+    "secondary": #fafbf8
+);
+
+@font-face {
+    font-family: "JAJAJA";
+    src: url("../../public/fonts/JAJAJA.ttf"); }
+  
+@font-face {
+    font-family: "Pragmatica";
+    src: url("../../public/fonts/Pragmatica-ExtraLight.ttf"); }
+
+// GENERAL 
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    // overflow: hidden;
+}
+
+
+a{
+  text-decoration: none;
+}
+
+main{
+    background-color: #e63329;
+    animation: wheelBackgroundColor 20s infinite;
+    width: 100%;
+}
+
+nav{
+  // position: sticky;
+}
+
+.section-1{
+  overflow: hidden;
+}
+
+
+.changing-color-txt{
+    color: black;
+    animation: wheelTextColor 20s infinite;
+    -webkit-text-stroke: 1px #fff;
+    letter-spacing: 2px;
+    font-size: 120px;
+    font-weight: bold;
+    font-family: 'JAJAJA';
+}
+
+.jajaja-icons i{
+  animation: wheelTextColor 20s infinite;
+}
+
+
+h1,h2,h3,h4,h5{
+    font-family: 'JAJAJA';
+}
+
+nav{
+    font-family: 'JAJAJA';
+    letter-spacing: 1px;
+}
+
+.changing-nav-color-txt{
+    animation: wheelTxtNavColor 20s infinite;
+}
+
+.nav-changing-background-color{
+    animation: wheelBackgroundNavColor 20s infinite;
+}
+
+.arrow-down{
+    animation: wheelTextColor 20s infinite;
+    font-weight: 900;
+    font-size: 150%;
+}
+
+.svg-jajaja{
+  animation: svgJajaja 20s infinite;
+}
+
+// JAJAJA MODAL
+
+.wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 85vh;
+    max-width: 450px;
+    width: 100%;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  .wrapper header{
+    font-size: 23px;
+    font-weight: 500;
+    padding: 17px 30px;
+    border-bottom: 1px solid #ccc;
+  }
+  .wrapper header.active{
+    cursor: grab;
+    user-select: none;
+  }
+  .wrapper .content{
+    display: flex;
+    padding: 30px 30px 40px 30px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .content .icon{
+    // height: 195px;
+    width: 100%;
+    margin: 2vh 0;
+    // border-radius: 50%;
+    // border: 5px solid #6F36FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .content .icon i{
+    color: #6F36FF;
+    font-size: 60px;
+  }
+  .content .title{
+    margin: 15px 0;
+    font-size: 29px;
+    font-weight: 500;
+  }
+  .content p{
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .close-btn{
+    position: relative;
+    left: 99%;
+  }
+
+  .modal-part{
+    height: 100vh;
+    width: 100%;
+    background-color: #6F36FF;
+    text-align: center;
+  }
+
+  .modal-recipe-wrapper{
+    position: absolute;
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    background-color: #fafbf8;
+    border-radius: 10px;
+    transform: translate(-20%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 550px;
+
+    iframe{
+      height: 90vh;
+      max-width: 550px;
+      width: 100%;
+      display: flex;
+      padding: 30px 0;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      cursor: grab;
+    }
+  }
+
+  .modal-recipe-wrapper header.active{
+    cursor: move;
+    user-select: none;
+  }
+
+
+
+
+  .modal-recipe-close-btn{
+    position: relative;
+    left: 96%;
+    font-size: 150%;
+  }
+
+  .modal-recipe-header{
+    background-color: #fafbf8;
+    border-radius: 10px;
+    height: 30px;
+
+    
+
+
+    .modal-recipe-title{
+      text-align: center;
+      font-size: 50px;
+    }
+  }
+
+  .modal-social-wrapper{
+    position: absolute;
+    visibility: hidden;
+    top: 35%;
+    left: 10%;
+    background-color: #fafbf8;
+    border-radius: 10px;
+    transform: translate(-20%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 550px;
+
+    iframe{
+      height: 45vh;
+      max-width: 550px;
+      width: 100%;
+      display: flex;
+      padding: 30px 0;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      cursor: grab;
+    }
+  }
+
+  .modal-social-wrapper header.active{
+    cursor: move;
+    user-select: none;
+    height: 10vh;
+  }
+
+
+
+  .modal-social-close-btn{
+    position: relative;
+    left: 95%;
+    bottom: 7vh;
+    font-size: 150%;
+  }
+
+  .modal-social-header{
+    background-color: #fafbf8;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    animation: wheelBackgroundColor 20s infinite;
+
+    .modal-social-title{
+      text-align: center;
+      font-size: 50px;
+    }
+  }
+
+  .modal-social-footer{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fafbf8;
+    height: 10vh;
+    animation: wheelBackgroundColor 20s infinite;
+  }
+
+  // MODAL ALL_RECIPES
+
+  .modal-all-recipe-wrapper{
+    position: absolute;
+    visibility: hidden;
+    top: 52%;
+    left: 10%;
+    background-color: rgba(250, 250, 250, 1);
+    border-radius: 10px;
+    transform: translate(-20%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 950px;
+    height: 80vh;
+
+    iframe{
+      height: 70vh;
+      width: 950px;
+      display: flex;
+      padding: 30px 0;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      cursor: grab;
+      
+    }
+  }
+
+  .modal-all-recipe-wrapper header.active{
+    cursor: move;
+    user-select: none;
+    height: 10vh;
+  }
+
+
+
+  .modal-all-recipe-close-btn{
+    position: relative;
+    left: 95%;
+    bottom: 7vh;
+    font-size: 150%;
+  }
+
+  .modal-all-recipe-header{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    .modal-all-recipe-title{
+      text-align: center;
+      font-size: 50px;
+    }
+  }
+
+  .modal-all-recipe-footer{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fafbf8;
+    height: 2vh;
+  }
+
+  // JAJAJA ABOUT
+
+  
+
+  .swiper-jajaja{
+    height: 100vh;
+    animation: wheelTextColor 20s infinite;
+  }
+
+  .jajaja-section-about{
+
+    h1{
+      font-size: 140px;
+    }
+  }
+
+  // JAJAJA BUENA ONDA 
+
+  .jajaja-section-buena-onda{
+
+    h1{
+      font-size: 180px;
+    }
+
+    svg{
+      height: 100px;
+      width: 100px;
+    }
+
+    .jajaja-section-buena-onda-txt{
+      margin-top: 20vh;
+      padding-top: 10vh;
+    }
+
+  }
+//JAJAJA SECTION HISTOIRE 
+
+.jajaja-section-history{
+  h1{
+    font-size: 180px;
+  }
+  .jajaja-section-history-txt{
+
+  }
+
+  .jajaja-section-history-title{
+  }
+}
+
+// JAJAJA MAIN 
+
+
+.jajaja-icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90vh;
+}
+
+
+
+
+// JAJAJA RECIPE
+
+.swiper-slide{
+  
+  h1,h2,h3,h4,h5,i{
+    animation: wheelTextColor 20s infinite;
+    -webkit-text-stroke:1px solid #fff;
+  }
+}
+
+.swiper{
+  cursor: grab;
+}
+
+#slide-2{
+  background-color: #e63329;
+  animation: wheelBackgroundColor 20s infinite;
+  height: 110vh;
+}
+
+.jajaja-recipe-txt{
+  text-align: center;
+
+  .jajaja-recipe-info-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.jajaja-title-centered{
+  text-align: center;
+}
+
+#background-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+
+.jajaja-container{
+  padding:1%;
+}
+
+.jajaja-recipe-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.jajaja-recipe-left-column{
+  width: 60%;
+  padding: 0 2rem;
+}
+
+.jajaja-margin-top{
+  margin-top: 40px;
+}
+
+.jajaja-list{
+  font-size: 60%;
+  width:100%
+}
+
+.jajaja-recipe-right-column{
+  width: 40%;
+  padding: 0 2rem;
+
+  ul{
+    list-style: none;
+  }
+
+  .jajaja-recipe-tags{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+
+    a{
+      animation: wheelTxtNavColor 20s infinite;
+    }
+
+    .jajaja-label{
+      padding: 0.5rem 2rem;
+      animation: wheelBackgroundNavColor 20s infinite;
+      border-radius: 20px;
+      
+    }
+  }
+}
+
+// ALL RECIPES
+
+.jajaja-recipes-recipe{
+
+  .jajaja-recipes-recipe-img{
+    img{
+      width: 100%;
+    }
+  }
+
+  .jajaja-recipes-recipe-txt{
+    padding: 2% 2%;
+  }
+  .jajaja-recipes-recipe-title{
+    margin: auto;
+
+    h2{
+      font-size: 190%;
+    }
+  }
+  .jajaja-recipes-recipe-icons{
+    .jajaja-recipes-recipe-icons-icon{
+      display: flex;
+      flex-direction: row;
+    }
+
+    i{
+      font-size: 160%;
+    }
+
+    p{
+      position: relative;
+      top: 6px;
+      left: 8px;
+    }
+  }
+
+  .jajaja-recipes-recipe-list{
+    .jajaja-recipes-recipe-ul{
+      list-style-type: circle;
+    }
+  }
+
+  .jajaja-recipes-recipe-btn{
+
+    margin-top: 7%;
+    button{
+      width: 45%;
+      border-radius: 30px;
+      padding: 2% 1%;
+      margin: auto;
+
+    }
+  }
+}
+
+#recipe-1{
+  .jajaja-recipes-recipe-img{
+    background-image: url('../../public/img/all-recipes/homemade-mexican-chorizo-queso-oaxaca-dip-2021-12-09-07-26-04-utc.jpg');
+    background-size: 150vh;
+  }
+
+  .jajaja-recipes-recipe-txt{
+    background-color:rgba(255, 228, 196,0.9);
+    color: #e63329;
+
+    .jajaja-recipes-recipe-btn{
+      button{
+        background-color: #e63329;
+        color: #ffe4c4;
+      }
+    }
+  }
+}
+
+#recipe-2{
+  .jajaja-recipes-recipe-img{
+    background-image: url('../../public/img/all-recipes/traditional-mexican-food-2021-08-30-10-27-37-utc.jpg');
+    background-size: 150vh;
+  }
+
+  .jajaja-recipes-recipe-txt{
+    background-color: rgba(164, 20, 12, 0.9);
+    color: rgb(183, 222, 247);;
+
+    .jajaja-recipes-recipe-btn{
+      button{
+        background-color: rgb(183, 222, 247);;
+        color: rgb(164, 20, 12);
+      }
+    }
+  }
+}
+
+#recipe-3{
+  .jajaja-recipes-recipe-img{
+    background-image: url('../../public/img/all-recipes/traditional-mexican-tacos-with-meat-2022-01-18-23-43-42-utc.jpg');
+    background-size: 150vh;
+  }
+
+  .jajaja-recipes-recipe-txt{
+    background-color: rgba(247, 158, 11, 0.9);
+    color: rgb(0, 139, 70);
+
+    .jajaja-recipes-recipe-btn{
+      button{
+        background-color: rgb(0, 139, 70);
+        color: rgb(247, 158, 11);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+// KEYFRAME
+
+@keyframes wheelBackgroundColor {
+    from, to { background-color: rgb(164, 20, 12); }
+    10%      { background-color: rgb(255, 224, 0); }
+    30%      { background-color: rgb(232, 78, 27); }
+    50%      { background-color: rgb(235, 170, 201); }
+    70%      { background-color: rgb(183, 222, 247); }
+    90%     { background-color: rgb(247, 158, 11); }
+}
+
+@keyframes wheelTextColor {
+    from, to { color: rgb(243, 244, 236); }
+    10%      { color: rgb(213, 38, 68); }
+    30%      { color: rgb(255, 224, 0); }
+    50%      { color: rgb(183, 222, 247); }
+    70%      { color: rgb(204, 33, 28); }
+    90%     { color: rgb(0, 139, 70); }
+}
+
+@keyframes wheelBackgroundNavColor {
+    from, to { background-color: rgb(243, 244, 236); }
+    10%      { background-color: rgb(213, 38, 68); }
+    30%      { background-color: rgb(255, 224, 0); }
+    50%      { background-color: rgb(183, 222, 247); }
+    70%      { background-color: rgb(204, 33, 28); }
+    90%     { background-color: rgb(0, 139, 70); }
+}
+
+@keyframes wheelTxtNavColor {
+    from, to { color: rgb(164, 20, 12); }
+    10%      { color: rgb(255, 224, 0); }
+    30%      { color: rgb(232, 78, 27); }
+    50%      { color: rgb(235, 170, 201); }
+    70%      { color: rgb(183, 222, 247); }
+    90%     { color: rgb(247, 158, 11); }
+}
+
+@keyframes svgJajaja {
+  from, to { fill: rgb(243, 244, 236); }
+  10%      { fill: rgb(213, 38, 68); }
+  30%      { fill: rgb(255, 224, 0); }
+  50%      { fill: rgb(183, 222, 247); }
+  70%      { fill: rgb(204, 33, 28); }
+  90%     { fill: rgb(0, 139, 70); }
+  }
+
