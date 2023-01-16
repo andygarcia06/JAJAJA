@@ -17,8 +17,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
 </head>
-<body>
-    <div class="section-1">
+<body class="jajaja-body">
+    <div class="section-1" id="section-main">
         <header>
             <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid">
@@ -44,6 +44,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fullscreen-btn changing-nav-color-txt" id="fullscreen-btn">Fullscreen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="to-next-section nav-link fullscreen-btn changing-nav-color-txt" id="fullscreen-btn" href="#jajaja-section-about">Who we are ?</a>
                     </li>
                     <li class="nav-item">
                         <a id="jajaja-nav-date" class="nav-link changing-nav-color-txt">Date</a>
@@ -91,7 +94,7 @@
                         <button class="btn btn-secondary" type="button" id="open-modal-recipe"><i class="fi fi-rr-burrito text-primary"></i></button>
                     </div>
                     <div class="jajaja-icons-item">
-                        <button class="btn btn-secondary"><i class="fi fi-rr-record-vinyl text-primary"></i></button>
+                        <button class="btn btn-secondary" id="open-modal-music"><i class="fi fi-rr-record-vinyl text-primary"></i></button>
                     </div>
                     <div class="jajaja-icons-item">
                         <button class="btn btn-secondary" id="open-modal-all-recipe"><i class="fi fi-rr-hat-chef text-primary"></i></button>
@@ -140,9 +143,24 @@
 
             </div>
         </div>
+
+        <div class="modal-music-wrapper">
+            <header class="modal-music-header">
+                <span class="modal-music-close-btn">&times;</span>
+            </header>
+            <div class="modal-music-content">
+            <iframe src="./playlist.html" frameborder="0"></iframe>
+            </div>
+            <div class="modal-music-footer">
+
+            </div>
+        </div>
 </div>
 
         <div class="row"><i class="fi fi-rr-angle-small-up"></i></div>
+        <div class="jajaja-second-section">
+            <a class="to-next-section jajaja-prev" href="#section-main"><p class="to-next-section">&times;</p></a>
+        </div>
         <!-- Slider main container -->
         <div class="swiper swiper-jajaja">
             <!-- Additional required wrapper -->

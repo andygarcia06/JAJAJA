@@ -9619,6 +9619,9 @@ textarea.form-control-lg {
 html {
   scroll-behavior: smooth; }
 
+.jajaja-body {
+  overflow: hidden; }
+
 a {
   text-decoration: none; }
 
@@ -9662,6 +9665,17 @@ nav {
 
 .svg-jajaja {
   animation: svgJajaja 20s infinite; }
+
+.jajaja-second-section {
+  height: 10vh; }
+
+.jajaja-prev p {
+  position: relative;
+  left: 115rem;
+  top: 2vh;
+  text-decoration: none;
+  font-size: 30px;
+  animation: wheelTextColor 20s infinite; }
 
 .wrapper {
   position: absolute;
@@ -9852,8 +9866,50 @@ nav {
   background-color: #fafbf8;
   height: 2vh; }
 
+.modal-music-wrapper {
+  position: absolute;
+  visibility: hidden;
+  top: 52%;
+  left: 10%;
+  background-color: rgba(250, 250, 250, 0);
+  border-radius: 10px;
+  transform: translate(-20%, -50%);
+  width: 450px;
+  height: 80vh; }
+  .modal-music-wrapper iframe {
+    height: 70vh;
+    width: 450px;
+    display: flex;
+    padding: 30px 0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    cursor: grab; }
+
+.modal-music-wrapper header.active {
+  cursor: move;
+  user-select: none;
+  height: 10vh; }
+
+.modal-music-close-btn {
+  position: relative;
+  left: 95%;
+  bottom: 70vh;
+  font-size: 150%; }
+
+.modal-music-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px; }
+  .modal-music-header .modal-music-title {
+    text-align: center;
+    font-size: 50px; }
+
+.modal-music-footer {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; }
+
 .swiper-jajaja {
-  height: 100vh;
+  height: 90vh;
   animation: wheelTextColor 20s infinite; }
 
 .jajaja-section-about h1, .jajaja-section-about .h1 {

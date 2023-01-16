@@ -133,6 +133,40 @@ function closeAllRecipeModal() {
 openModalAllRecipeBtn.addEventListener('click', openAllRecipeModal);
 closeModalAllRecipeBtn.addEventListener('click',closeAllRecipeModal);
 
+// MODAL MUSIC
+
+const openModalMusicBtn = document.querySelector('#open-modal-music')
+const closeModalMusicBtn = document.querySelector('.modal-music-close-btn')
+const modalMusicWrapperIframe = document.querySelector(".modal-music-wrapper iframe")
+const modalMusicWrapper = document.querySelector(".modal-music-wrapper"),
+ModalMusicHeader = modalMusicWrapper.querySelector(".modal-music-header");
+function onDrag5({movementX, movementY}){
+  let getModalMusicStyle = window.getComputedStyle(modalMusicWrapper);
+  let leftModalMusicVal = parseInt(getModalMusicStyle.left);
+  let topModalMusicVal = parseInt(getModalMusicStyle.top);
+  modalMusicWrapper.style.left = `${leftModalMusicVal  + movementX}px`;
+  modalMusicWrapper.style.top = `${topModalMusicVal + movementY}px`;
+}
+ModalMusicHeader.addEventListener("mousedown", ()=>{
+    ModalMusicHeader.classList.add("active");
+    ModalMusicHeader.addEventListener("mousemove", onDrag5);
+});
+document.addEventListener("mouseup", ()=>{
+    ModalMusicHeader.classList.remove("active");
+    ModalMusicHeader.removeEventListener("mousemove", onDrag5);
+});
+
+function openMusicModal() {
+    modalMusicWrapper.style.visibility = 'visible';
+};
+
+function closeMusicModal() {
+    modalMusicWrapper.style.visibility = 'hidden';
+};
+
+openModalMusicBtn.addEventListener('click', openMusicModal);
+closeModalMusicBtn.addEventListener('click',closeMusicModal);
+
 // MODAL GETS OVER MODALS
 
 wrapper.addEventListener('click', ()=>{
@@ -141,6 +175,7 @@ wrapper.addEventListener('click', ()=>{
     modalRecipeWrapper.style.zIndex = 'auto';
     modalSocialWrapper.style.zIndex = 'auto';
     modalAllRecipeWrapper.style.zIndex = 'auto';
+    modalMusicWrapper.style.zIndex = 'auto';
 });
 
 modalRecipeWrapper.addEventListener('click', ()=>{
@@ -148,6 +183,7 @@ modalRecipeWrapper.addEventListener('click', ()=>{
     wrapper.style.zIndex = 'auto';
     modalSocialWrapper.style.zIndex = 'auto';
     modalAllRecipeWrapper.style.zIndex = 'auto';
+    modalMusicWrapper.style.zIndex = 'auto';
 });
 
 modalSocialWrapper.addEventListener('click', ()=>{
@@ -155,13 +191,23 @@ modalSocialWrapper.addEventListener('click', ()=>{
     wrapper.style.zIndex = 'auto';
     modalRecipeWrapper.style.zIndex = 'auto';
     modalAllRecipeWrapper.style.zIndex = 'auto';
+    modalMusicWrapper.style.zIndex = 'auto';
 });
 
 modalAllRecipeWrapper.addEventListener('click', ()=>{
     modalAllRecipeWrapper.style.zIndex = 1000;
     wrapper.style.zIndex = 'auto';
     modalRecipeWrapper.style.zIndex = 'auto';
-    modalSocialWrapper.style.zIndex = 'auto'
+    modalSocialWrapper.style.zIndex = 'auto';
+    modalMusicWrapper.style.zIndex = 'auto';
+});
+
+modalMusicWrapperIframe.addEventListener('click', ()=>{
+    modalMusicWrapperIframe.style.zIndex = 10000;
+    wrapper.style.zIndex = 'auto';
+    modalRecipeWrapper.style.zIndex = 'auto';
+    modalSocialWrapper.style.zIndex = 'auto';
+    modalAllRecipeWrapper.style.zIndex = 'auto';
 });
 
 
