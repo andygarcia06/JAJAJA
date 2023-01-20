@@ -11,9 +11,9 @@ const swiper = new Swiper('.swiper', {
       el: '.swiper-pagination',
       dynamicBullets: true,
     },
-    // navigation: {
-    //   nextEl: '.swiper-button-next',
-    //   prevEl: '.swiper-button-prev',
-    // },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
   
   });
