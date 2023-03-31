@@ -9,7 +9,7 @@
 	</style>
 </head>
 <body>
-    	<div id="instafeed-container"></div>
+    	<div id="instafeed-container" onclick="instalink()"></div>
 
 
 
@@ -18,8 +18,9 @@
 	var userFeed = new Instafeed({
 		get: 'user',
 		target: "instafeed-container",
-    	resolution: 'low_resolution',
-		accessToken: 'IGQVJVNjhlWG1GYUt0RG40d0x1enBJXy1RYzk3M2R4d1dvTEp4Vkd3Nm9UTl84dFB3SV9JSzdiWFhpV1JjOWFjS2p4c3RGUlFFVFlDSjJwbEkxcDQwWVZAhUnlkbmNsZAVhnX2NSRUY3amRscXVtSDhKTQZDZD'
+    	resolution: 'high_resolution',
+		accessToken: 'IGQVJVbjZAzM0FmM1U5NkNtX1lVdGJyMWtMR25Ia2g5anhVSG91WDNQSnh1Mi1iUlBERkxUR3pLckh1WUp0MF9nT21hYmUzUUdTT3NyZAWRiWUxTNERRaTdJTlEtTHV5S1BqYXNoLXNKRXEzcE4yWVZAwRQZDZD',
+		limit : 9
 	});
 	userFeed.run();
 	</script>
