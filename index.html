@@ -9,279 +9,745 @@
     <link rel="stylesheet" href="./public/style/default.css">
     <title>Document</title>
 
+
     <!-- FLATICONS -->
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+    <!-- GOOGLE ICONS -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
 
     <!-- SWIPER.JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
+    <!-- MOMENT -->
+    <script src="./public/js/moment.js"></script>
+
 </head>
-<body class="jajaja-body">
-    <div class="section-1" id="section-main">
-        <header>
-            <nav class="navbar navbar-expand-lg ">
-                <div class="container-fluid">
-                <a class="navbar-brand changing-nav-color-txt open-modal-btn" href="#">HOME</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<body class="jajaja-body" onload="windowNotMuted()">
+    <div id="preloader">
+        <div class="jajaja-preloader-img">
+            <img src="./public/img/png/SUN.png" alt="" srcset="">
+        </div>
+        <input type="range" class="" id="progressbar" min="0" max="100" value="0" step="1">
+        <p id="jajaja-preloader-text">Loading Buena Onda</p>
+    </div>
+    <section class="jajaja-section-main">   
+        <header class="jajaja-header" id="jajaja-header">
+            <nav class="navbar">
+                <svg class="logo" viewBox="0 0 278 95" fill="rgb(215, 37, 71)" xmlns="http://www.w3.org/2000/svg" style="fill: rgb( 230 ,  51 , 42)">
+                    <path d="M42.2 1.19995V73.2C42.2 84.9 32.7 94.3 21.1 94.3C16.9 94.3 12.9 93.1 9.6 90.9C3.8 87.2 0 80.6 0 73.2V28.7H19.3C19.3 28.7 19.3 60.4 19.3 73.2C19.3 74.2 20.1 75 21.1 75C22.1 75 22.9 74.2 22.9 73.2V1.19995H42.2V1.19995Z"></path>
+                    <path d="M133.9 1.19995V73.2C133.9 84.9 124.4 94.3 112.8 94.3C108.6 94.3 104.6 93.1 101.3 90.9C95.5001 87.1 91.6001 80.6 91.6001 73.2V28.7H111C111 28.7 111 60.4 111 73.2C111 74.2 111.8 75 112.8 75C113.8 75 114.6 74.2 114.6 73.2V1.19995H133.9V1.19995Z"></path>
+                    <path d="M225.7 1.19995V73.2C225.7 84.9 216.2 94.3 204.6 94.3C200.4 94.3 196.4 93.1 193.1 90.9C187.3 87.1 183.4 80.6 183.4 73.2V28.7H202.7V73.2C202.7 74.2 203.5 75 204.5 75C205.5 75 206.3 74.2 206.3 73.2V1.19995H225.7V1.19995Z"></path>
+                    <path d="M179.7 19.3C178.8 8.5 169.7 0 158.7 0C147.1 0 137.7 9.4 137.6 21V21.1V93.1H156.9V64.3H160.5V93.1H179.8V21.1C179.8 20.5 179.8 19.9 179.7 19.3ZM156.9 21.1C156.9 20.1 157.7 19.3 158.7 19.3C159.7 19.3 160.5 20.1 160.5 21.1V44.4H156.9V21.1V21.1Z"></path>
+                    <path d="M87.9999 19.3C87.0999 8.5 77.9999 0 66.9999 0C55.3999 0 45.9999 9.4 45.8999 21V21.1V93.1H65.1999V64.3H68.7999V93.1H88.0999V21.1C88.0999 20.5 88.0999 19.9 87.9999 19.3ZM65.1999 21.1C65.1999 20.1 65.9999 19.3 66.9999 19.3C67.9999 19.3 68.7999 20.1 68.7999 21.1V44.4H65.1999V21.1Z"></path>
+                    <path d="M271.4 19.3C270.5 8.5 261.4 0 250.4 0C238.8 0 229.4 9.4 229.3 21V21.1V93.1H248.6V64.3H252.2V93.1H271.5V21.1C271.5 20.5 271.5 19.9 271.4 19.3ZM248.6 21.1C248.6 20.1 249.4 19.3 250.4 19.3C251.4 19.3 252.2 20.1 252.2 21.1V44.4H248.6V21.1V21.1Z"></path>
+                    <path d="M271.6 3.3C271.6 1.4 273 0 274.8 0C276.6 0 278 1.4 278 3.3C278 5.2 276.6 6.6 274.8 6.6C273 6.6 271.6 5.2 271.6 3.3ZM277.6 3.3C277.6 1.6 276.4 0.3 274.8 0.3C273.2 0.3 272 1.6 272 3.3C272 5 273.2 6.3 274.8 6.3C276.4 6.3 277.6 5 277.6 3.3ZM273 3.3C273 2.1 273.7 1.2 274.8 1.2C275.7 1.2 276.2 1.7 276.4 2.5H275.9C275.8 2 275.5 1.7 274.9 1.7C274 1.7 273.6 2.4 273.6 3.3C273.6 4.2 274.1 4.9 274.9 4.9C275.6 4.9 275.9 4.5 276 3.9H276.5C276.5 4.3 276.3 4.6 276.1 4.9C275.8 5.2 275.4 5.4 274.9 5.4C273.7 5.3 273 4.5 273 3.3Z"></path>
+                </svg>
+                <ul class="nav-items">
+                  <li><a href="#" onclick="openWrapper()">Home</a></li>
+                  <li><a href="#" id="jajaja-volume" onclick="openVolumeControler()">Volume</a>
+                    <div class="volume-control">
+                        <input type="range" min="0" max="1" step="0.02" value="1" id="volume-slider">
+                        <a href="#" onclick="closeVolumeControler()">&times;</p>
+                    </div></li>
+                  <li><a class="fullscreen-btn" href="#">Fullscreen</a></li>
+                  <li><a href="#jajaja-section-txt-1">Bio</a></li>
+                  <li><a href="#" onclick="triggerContacts()" >Contact</a></li>
+                  <div class="jajaja-nav-hour-container ">
+                    <a id="jajaja-nav-hour" class="nav-link text-primary current-date">Hour<span></a>
+                </div>
+                </ul>
+                <input type="checkbox" id="hamburger-input" class="burger-shower" />
+                <label id="hamburger-menu" for="hamburger-input">
+                <nav id="sidebar-menu">
+                    <h3>JAJAJA</h3>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active changing-nav-color-txt" aria-current="page" href="#">Subscribe</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle changing-nav-color-txt"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Recipes</a></li>
-                        <li><a class="dropdown-item" href="#">JAJAJA sounds</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-primary" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-primary jajaja-mute">Volume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary">Fullscreen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="to-next-section nav-link text-primary"  href="#jajaja-section-2" id="jajaja-bio">Bio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-primary">Contact</a>
+                        </li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fullscreen-btn changing-nav-color-txt" id="fullscreen-btn">Fullscreen</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="to-next-section nav-link fullscreen-btn changing-nav-color-txt" id="fullscreen-btn" href="#jajaja-section-about">Who we are ?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="jajaja-nav-date" class="nav-link changing-nav-color-txt">Date</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="jajaja-nav-hour" class="nav-link changing-nav-color-txt">Hour</a>
-                    </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                    <input class="form-control me-2 changing-nav-color-txt" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success changing-nav-color-txt" type="submit">Search</button>
-                    </form>
-                </div>
-                </div>
-            </nav>
-    </header>
+                </nav>
+                </label>
 
-    <main class="JAJAJA-main">
-        <div class="row">
-            <div class="col-md-11">
-                <div class="wrapper bg-secondary">
-                    <header><span class="close-btn">&times;</span></header>
-                    <div class="content">
-                    <div class="icon">                   
-                        <svg class="svg-jajaja" viewBox="0 0 278 95" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(230, 51, 42);">
-                            <path d="M42.2 1.19995V73.2C42.2 84.9 32.7 94.3 21.1 94.3C16.9 94.3 12.9 93.1 9.6 90.9C3.8 87.2 0 80.6 0 73.2V28.7H19.3C19.3 28.7 19.3 60.4 19.3 73.2C19.3 74.2 20.1 75 21.1 75C22.1 75 22.9 74.2 22.9 73.2V1.19995H42.2V1.19995Z"></path>
-                            <path d="M133.9 1.19995V73.2C133.9 84.9 124.4 94.3 112.8 94.3C108.6 94.3 104.6 93.1 101.3 90.9C95.5001 87.1 91.6001 80.6 91.6001 73.2V28.7H111C111 28.7 111 60.4 111 73.2C111 74.2 111.8 75 112.8 75C113.8 75 114.6 74.2 114.6 73.2V1.19995H133.9V1.19995Z"></path>
-                            <path d="M225.7 1.19995V73.2C225.7 84.9 216.2 94.3 204.6 94.3C200.4 94.3 196.4 93.1 193.1 90.9C187.3 87.1 183.4 80.6 183.4 73.2V28.7H202.7V73.2C202.7 74.2 203.5 75 204.5 75C205.5 75 206.3 74.2 206.3 73.2V1.19995H225.7V1.19995Z"></path>
-                            <path d="M179.7 19.3C178.8 8.5 169.7 0 158.7 0C147.1 0 137.7 9.4 137.6 21V21.1V93.1H156.9V64.3H160.5V93.1H179.8V21.1C179.8 20.5 179.8 19.9 179.7 19.3ZM156.9 21.1C156.9 20.1 157.7 19.3 158.7 19.3C159.7 19.3 160.5 20.1 160.5 21.1V44.4H156.9V21.1V21.1Z"></path>
-                            <path d="M87.9999 19.3C87.0999 8.5 77.9999 0 66.9999 0C55.3999 0 45.9999 9.4 45.8999 21V21.1V93.1H65.1999V64.3H68.7999V93.1H88.0999V21.1C88.0999 20.5 88.0999 19.9 87.9999 19.3ZM65.1999 21.1C65.1999 20.1 65.9999 19.3 66.9999 19.3C67.9999 19.3 68.7999 20.1 68.7999 21.1V44.4H65.1999V21.1Z"></path>
-                            <path d="M271.4 19.3C270.5 8.5 261.4 0 250.4 0C238.8 0 229.4 9.4 229.3 21V21.1V93.1H248.6V64.3H252.2V93.1H271.5V21.1C271.5 20.5 271.5 19.9 271.4 19.3ZM248.6 21.1C248.6 20.1 249.4 19.3 250.4 19.3C251.4 19.3 252.2 20.1 252.2 21.1V44.4H248.6V21.1V21.1Z"></path>
-                            <path d="M271.6 3.3C271.6 1.4 273 0 274.8 0C276.6 0 278 1.4 278 3.3C278 5.2 276.6 6.6 274.8 6.6C273 6.6 271.6 5.2 271.6 3.3ZM277.6 3.3C277.6 1.6 276.4 0.3 274.8 0.3C273.2 0.3 272 1.6 272 3.3C272 5 273.2 6.3 274.8 6.3C276.4 6.3 277.6 5 277.6 3.3ZM273 3.3C273 2.1 273.7 1.2 274.8 1.2C275.7 1.2 276.2 1.7 276.4 2.5H275.9C275.8 2 275.5 1.7 274.9 1.7C274 1.7 273.6 2.4 273.6 3.3C273.6 4.2 274.1 4.9 274.9 4.9C275.6 4.9 275.9 4.5 276 3.9H276.5C276.5 4.3 276.3 4.6 276.1 4.9C275.8 5.2 275.4 5.4 274.9 5.4C273.7 5.3 273 4.5 273 3.3Z"></path>
-                        </svg>
-                    </div>
-                    <!-- <div class="title">JAJAJA</div> -->
-                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eum rerum, nihil praesentium, saepe magni at illo repellat maxime iusto blanditiis illum accusamus? Quidem reiciendis atque commodi repellendus nemo optio!</p>
-                    <br>
-                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eum rerum, nihil praesentium, saepe magni at illo repellat maxime iusto blanditiis illum accusamus? Quidem reiciendis atque commodi repellendus nemo optio!</p>
-                    </div>
-                </div>
-            </div>
-            <section class="col-md-1">
-                <div class="jajaja-icons">
-                    <div class="jajaja-icons-item">
-                        <button class="btn btn-secondary" type="button" id="open-modal-recipe"><i class="fi fi-rr-burrito text-primary"></i></button>
-                    </div>
-                    <div class="jajaja-icons-item">
-                        <button class="btn btn-secondary" id="open-modal-music"><i class="fi fi-rr-record-vinyl text-primary"></i></button>
-                    </div>
-                    <div class="jajaja-icons-item">
-                        <button class="btn btn-secondary" id="open-modal-all-recipe"><i class="fi fi-rr-hat-chef text-primary"></i></button>
-                    </div>
-                    <div class="jajaja-icons-item">
-                        <button class="btn btn-secondary"><i class="fi fi-rr-glass-cheers text-primary"></i></button>
-                    </div>
-                    <div class="jajaja-icons-item">
-                        <button class="btn btn-secondary"><i class="fi fi-rr-dice-alt text-primary"></i></button>
-                    </div>
-                    <div class="jajaja-icons-item">
-                        <button class="btn btn-secondary" id="open-modal-social">
-                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="#e63329" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46471 1.0662C8.63794 1.01266 9.01258 1 12 1C14.9874 1 15.362 1.01266 16.5352 1.0662C17.7061 1.1196 18.5057 1.30556 19.2054 1.57751C19.9288 1.85858 20.5422 2.2347 21.1537 2.84623C21.7653 3.45779 22.1414 4.07123 22.4225 4.79454C22.6944 5.49426 22.8804 6.29385 22.9338 7.46471C22.9873 8.63798 23 9.01258 23 12C23 14.9874 22.9873 15.362 22.9338 16.5353C22.8804 17.7061 22.6944 18.5057 22.4225 19.2054C22.1414 19.9288 21.7653 20.5422 21.1537 21.1537C20.5422 21.7653 19.9288 22.1414 19.2054 22.4225C18.5057 22.6944 17.7061 22.8804 16.5352 22.9338C15.362 22.9873 14.9874 23 12 23C9.01258 23 8.63794 22.9873 7.46471 22.9338C6.29385 22.8804 5.49426 22.6944 4.79454 22.4225C4.07123 22.1414 3.45775 21.7653 2.84623 21.1537C2.23466 20.5422 1.85858 19.9287 1.57746 19.2054C1.30552 18.5057 1.1196 17.7061 1.06615 16.5353C1.01262 15.362 1 14.9874 1 12C1 9.01254 1.01262 8.63798 1.06615 7.46471C1.1196 6.29385 1.30552 5.49426 1.57746 4.79454C1.85858 4.07123 2.23466 3.45779 2.84623 2.84623C3.45775 2.2347 4.07123 1.85858 4.79454 1.57751C5.49426 1.30556 6.29385 1.1196 7.46471 1.0662ZM16.4449 3.04608C15.285 2.99316 14.9371 2.98198 12 2.98198C9.06284 2.98198 8.71496 2.99316 7.55501 3.04608C6.48257 3.09503 5.90008 3.27423 5.51247 3.42487C4.99906 3.62442 4.63259 3.86278 4.24768 4.24773C3.86278 4.63263 3.62437 4.99906 3.42482 5.51252C3.27423 5.90013 3.09503 6.48257 3.04608 7.55506C2.99316 8.71496 2.98198 9.06288 2.98198 12C2.98198 14.9371 2.99316 15.285 3.04608 16.4449C3.09503 17.5174 3.27423 18.0999 3.42482 18.4875C3.62437 19.0009 3.86278 19.3674 4.24768 19.7523C4.63259 20.1372 4.99906 20.3756 5.51247 20.5751C5.90008 20.7257 6.48257 20.905 7.55506 20.9539C8.71479 21.0068 9.06262 21.018 12 21.018C14.9373 21.018 15.2852 21.0068 16.4449 20.9539C17.5174 20.905 18.0998 20.7257 18.4874 20.5751C19.0009 20.3756 19.3674 20.1372 19.7523 19.7523C20.1372 19.3674 20.3755 19.0009 20.5751 18.4875C20.7257 18.0999 20.9049 17.5174 20.9539 16.4449C21.0068 15.285 21.018 14.9371 21.018 12C21.018 9.06288 21.0068 8.71496 20.9539 7.55506C20.9049 6.48257 20.7257 5.90013 20.5751 5.51252C20.3755 4.99906 20.1372 4.63263 19.7523 4.24768C19.3674 3.86278 19.0009 3.62442 18.4874 3.42487C18.0998 3.27423 17.5174 3.09503 16.4449 3.04608ZM8.33329 12C8.33329 14.025 9.97495 15.6667 12 15.6667C14.025 15.6667 15.6667 14.025 15.6667 12C15.6667 9.97495 14.025 8.33333 12 8.33333C9.97495 8.33333 8.33329 9.97495 8.33329 12ZM6.35131 12C6.35131 8.88032 8.88032 6.35136 12 6.35136C15.1196 6.35136 17.6486 8.88032 17.6486 12C17.6486 15.1197 15.1196 17.6486 12 17.6486C8.88032 17.6486 6.35131 15.1197 6.35131 12ZM17.8718 7.44816C18.6008 7.44816 19.1918 6.8572 19.1918 6.12818C19.1918 5.39915 18.6008 4.8082 17.8718 4.8082C17.1428 4.8082 16.5518 5.39915 16.5518 6.12818C16.5518 6.8572 17.1428 7.44816 17.8718 7.44816Z" fill="#3F3F46"/>
-                                <mask id="mask0_2844_2717" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="1" width="22" height="22">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46471 1.0662C8.63794 1.01266 9.01258 1 12 1C14.9874 1 15.362 1.01266 16.5352 1.0662C17.7061 1.1196 18.5057 1.30556 19.2054 1.57751C19.9288 1.85858 20.5422 2.2347 21.1537 2.84623C21.7653 3.45779 22.1414 4.07123 22.4225 4.79454C22.6944 5.49426 22.8804 6.29385 22.9338 7.46471C22.9873 8.63798 23 9.01258 23 12C23 14.9874 22.9873 15.362 22.9338 16.5353C22.8804 17.7061 22.6944 18.5057 22.4225 19.2054C22.1414 19.9288 21.7653 20.5422 21.1537 21.1537C20.5422 21.7653 19.9288 22.1414 19.2054 22.4225C18.5057 22.6944 17.7061 22.8804 16.5352 22.9338C15.362 22.9873 14.9874 23 12 23C9.01258 23 8.63794 22.9873 7.46471 22.9338C6.29385 22.8804 5.49426 22.6944 4.79454 22.4225C4.07123 22.1414 3.45775 21.7653 2.84623 21.1537C2.23466 20.5422 1.85858 19.9287 1.57746 19.2054C1.30552 18.5057 1.1196 17.7061 1.06615 16.5353C1.01262 15.362 1 14.9874 1 12C1 9.01254 1.01262 8.63798 1.06615 7.46471C1.1196 6.29385 1.30552 5.49426 1.57746 4.79454C1.85858 4.07123 2.23466 3.45779 2.84623 2.84623C3.45775 2.2347 4.07123 1.85858 4.79454 1.57751C5.49426 1.30556 6.29385 1.1196 7.46471 1.0662ZM16.4449 3.04608C15.285 2.99316 14.9371 2.98198 12 2.98198C9.06284 2.98198 8.71496 2.99316 7.55501 3.04608C6.48257 3.09503 5.90008 3.27423 5.51247 3.42487C4.99906 3.62442 4.63259 3.86278 4.24768 4.24773C3.86278 4.63263 3.62437 4.99906 3.42482 5.51252C3.27423 5.90013 3.09503 6.48257 3.04608 7.55506C2.99316 8.71496 2.98198 9.06288 2.98198 12C2.98198 14.9371 2.99316 15.285 3.04608 16.4449C3.09503 17.5174 3.27423 18.0999 3.42482 18.4875C3.62437 19.0009 3.86278 19.3674 4.24768 19.7523C4.63259 20.1372 4.99906 20.3756 5.51247 20.5751C5.90008 20.7257 6.48257 20.905 7.55506 20.9539C8.71479 21.0068 9.06262 21.018 12 21.018C14.9373 21.018 15.2852 21.0068 16.4449 20.9539C17.5174 20.905 18.0998 20.7257 18.4874 20.5751C19.0009 20.3756 19.3674 20.1372 19.7523 19.7523C20.1372 19.3674 20.3755 19.0009 20.5751 18.4875C20.7257 18.0999 20.9049 17.5174 20.9539 16.4449C21.0068 15.285 21.018 14.9371 21.018 12C21.018 9.06288 21.0068 8.71496 20.9539 7.55506C20.9049 6.48257 20.7257 5.90013 20.5751 5.51252C20.3755 4.99906 20.1372 4.63263 19.7523 4.24768C19.3674 3.86278 19.0009 3.62442 18.4874 3.42487C18.0998 3.27423 17.5174 3.09503 16.4449 3.04608ZM8.33329 12C8.33329 14.025 9.97495 15.6667 12 15.6667C14.025 15.6667 15.6667 14.025 15.6667 12C15.6667 9.97495 14.025 8.33333 12 8.33333C9.97495 8.33333 8.33329 9.97495 8.33329 12ZM6.35131 12C6.35131 8.88032 8.88032 6.35136 12 6.35136C15.1196 6.35136 17.6486 8.88032 17.6486 12C17.6486 15.1197 15.1196 17.6486 12 17.6486C8.88032 17.6486 6.35131 15.1197 6.35131 12ZM17.8718 7.44816C18.6008 7.44816 19.1918 6.8572 19.1918 6.12818C19.1918 5.39915 18.6008 4.8082 17.8718 4.8082C17.1428 4.8082 16.5518 5.39915 16.5518 6.12818C16.5518 6.8572 17.1428 7.44816 17.8718 7.44816Z" fill="white"/>
-                                </mask>
-                                <g mask="url(#mask0_2844_2717)">
-                                </g>
+                <div class="overlay"></div>
+              </nav>   
+          </header>
+
+        <main class="jajaja-section-1">
+            <div class="row">
+                <div class="jajaja-main-modal-container col-md-9">
+                    <div class="wrapper jajaja-wrapper popup jajaja-draggable" onclick="bringToFront(this)">
+                        <header class="jajaja-modal-header">
+                            <div class="drag-handle"></div>
+                            <div class="jajaja-header-btns">
+                                <span class="jajaja-header-circle close-btn" onclick="closeWrapper()"></span>
+                                <span class="jajaja-header-circle"></span>
+                                <span class="jajaja-header-circle"></span>
+                            </div>
+                            <div class="line-container">
+                                <div class="line line1"></div>
+                                <div class="line line2"></div>
+                                <div class="line line3"></div>
+                              </div>
+                        </header>
+                        <div class="content">
+                        <div class="icon">                   
+                            <svg class="svg-jajaja" viewBox="0 0 278 95" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(230, 51, 42);">
+                                <path d="M42.2 1.19995V73.2C42.2 84.9 32.7 94.3 21.1 94.3C16.9 94.3 12.9 93.1 9.6 90.9C3.8 87.2 0 80.6 0 73.2V28.7H19.3C19.3 28.7 19.3 60.4 19.3 73.2C19.3 74.2 20.1 75 21.1 75C22.1 75 22.9 74.2 22.9 73.2V1.19995H42.2V1.19995Z"></path>
+                                <path d="M133.9 1.19995V73.2C133.9 84.9 124.4 94.3 112.8 94.3C108.6 94.3 104.6 93.1 101.3 90.9C95.5001 87.1 91.6001 80.6 91.6001 73.2V28.7H111C111 28.7 111 60.4 111 73.2C111 74.2 111.8 75 112.8 75C113.8 75 114.6 74.2 114.6 73.2V1.19995H133.9V1.19995Z"></path>
+                                <path d="M225.7 1.19995V73.2C225.7 84.9 216.2 94.3 204.6 94.3C200.4 94.3 196.4 93.1 193.1 90.9C187.3 87.1 183.4 80.6 183.4 73.2V28.7H202.7V73.2C202.7 74.2 203.5 75 204.5 75C205.5 75 206.3 74.2 206.3 73.2V1.19995H225.7V1.19995Z"></path>
+                                <path d="M179.7 19.3C178.8 8.5 169.7 0 158.7 0C147.1 0 137.7 9.4 137.6 21V21.1V93.1H156.9V64.3H160.5V93.1H179.8V21.1C179.8 20.5 179.8 19.9 179.7 19.3ZM156.9 21.1C156.9 20.1 157.7 19.3 158.7 19.3C159.7 19.3 160.5 20.1 160.5 21.1V44.4H156.9V21.1V21.1Z"></path>
+                                <path d="M87.9999 19.3C87.0999 8.5 77.9999 0 66.9999 0C55.3999 0 45.9999 9.4 45.8999 21V21.1V93.1H65.1999V64.3H68.7999V93.1H88.0999V21.1C88.0999 20.5 88.0999 19.9 87.9999 19.3ZM65.1999 21.1C65.1999 20.1 65.9999 19.3 66.9999 19.3C67.9999 19.3 68.7999 20.1 68.7999 21.1V44.4H65.1999V21.1Z"></path>
+                                <path d="M271.4 19.3C270.5 8.5 261.4 0 250.4 0C238.8 0 229.4 9.4 229.3 21V21.1V93.1H248.6V64.3H252.2V93.1H271.5V21.1C271.5 20.5 271.5 19.9 271.4 19.3ZM248.6 21.1C248.6 20.1 249.4 19.3 250.4 19.3C251.4 19.3 252.2 20.1 252.2 21.1V44.4H248.6V21.1V21.1Z"></path>
+                                <path d="M271.6 3.3C271.6 1.4 273 0 274.8 0C276.6 0 278 1.4 278 3.3C278 5.2 276.6 6.6 274.8 6.6C273 6.6 271.6 5.2 271.6 3.3ZM277.6 3.3C277.6 1.6 276.4 0.3 274.8 0.3C273.2 0.3 272 1.6 272 3.3C272 5 273.2 6.3 274.8 6.3C276.4 6.3 277.6 5 277.6 3.3ZM273 3.3C273 2.1 273.7 1.2 274.8 1.2C275.7 1.2 276.2 1.7 276.4 2.5H275.9C275.8 2 275.5 1.7 274.9 1.7C274 1.7 273.6 2.4 273.6 3.3C273.6 4.2 274.1 4.9 274.9 4.9C275.6 4.9 275.9 4.5 276 3.9H276.5C276.5 4.3 276.3 4.6 276.1 4.9C275.8 5.2 275.4 5.4 274.9 5.4C273.7 5.3 273 4.5 273 3.3Z"></path>
                             </svg>
-                        </button>
+                        </div>
+
+                        <div class="jajaja-wrapper-content">
+                            <p>Mexique, une rue, début de soirée. Ecoute, ce son c’est la vie. Un son qui vient du cœur davantage que de l’esprit. Un ami. Deux amis. Toute la rue en folie. Un bruit qui ne triche pas, que l’on n’arrête pas. Débordant. Imprévisible. Extravagant. Ici, on mange comme on s’aime. A plusieurs, à pas d’heure. Tacos, Tequilla, Tostadas, y mucho mas. Ici c’est comme là-bas, c’est JAJAJA. La buena onda mexicana.</p>
+                        </div>
+                        </div>
                     </div>
                 </div>
-            </section>
-            <div class="row"><button class="btn"><a class="to-next-section" href="#jajaja-section-about"><i class="fi fi-rr-angle-down arrow-down"></i></a></button></div>
-        </div>
-    </main>
-
-        <div class="modal-recipe-wrapper">
-            <span class="modal-recipe-close-btn">&times;</span>
-            <header class="modal-recipe-header"><h1 class=" modal-recipe-title changing-color-txt">RECIPE</h1></header>
-            <div class="modal-recipe-content">
-            <iframe src="./recipe.html" frameborder="0"></iframe>
-            </div>
-        </div>
-
-        <div class="modal-social-wrapper">
-            <header class="modal-social-header">
-                <h1 class=" modal-social-title changing-color-txt">INSTAGRAM</h1>
-                <span class="modal-social-close-btn">&times;</span>
-            </header>
-            <div class="modal-social-content">
-            <iframe src="./instafeed.html" frameborder="0"></iframe>
-            </div>
-            <div class="modal-social-footer">
-
-            </div>
-        </div>
-
-        <div class="modal-music-wrapper">
-            <header class="modal-music-header">
-                <span class="modal-music-close-btn">&times;</span>
-            </header>
-            <div class="modal-music-content">
-            <iframe src="./playlist.html" frameborder="0"></iframe>
-            </div>
-            <div class="modal-music-footer">
-
-            </div>
-        </div>
-</div>
-
-        <div class="row"><i class="fi fi-rr-angle-small-up"></i></div>
-        <div class="jajaja-second-section">
-            <a class="to-next-section jajaja-prev" href="#section-main"><p class="to-next-section">&times;</p></a>
-        </div>
-        <!-- Slider main container -->
-        <div class="swiper swiper-jajaja">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide swiper-slide-jajaja">
-                <section class="container jajaja-section-buena-onda" id="jajaja-section-about">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h1>LA BUENA ONDA MEXICANA</h1>
+                <div class="jajaja-desktop-icons col-md-3">
+                    <div class="jajaja-icons">
+                        <div class="jajaja-icon">
+                            <div class="jajaja-icon-img" onmousedown="dragElement(this)">
+                                <div onclick='openRecipeModal()' class="jajaja-icon-img-container" id="open-modal-recipe">
+                                    <img  class="jajaja-dektop-icon" src="./public/img/PIXELS/desktop-icons/resized/tacos.png" alt="Tacos">
+                                    <div class="jajaja-icon-name" id="jajaja-icon-tacos-text" ><p class="jajaja-icon-name-text">RECETTES</p></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6 mt-5 jajaja-section-buena-onda-txt">
-                            <p>JAJAJA! CE SON, C’EST LA VIE.
-                                LA BUENA ONDA QUI COULE DANS LE SANG DU PAYS.<br><br>
-                                
-                                “BARRIGA LLENA, CORAZÓN CONTENTO” *<br><br>
-                                
-                                ICI, ON MANGE, ON VIT, ON RIT.<br>
-                                (TRÈS) FORT, À PLUSIEURS, À PAS D’HEURE.<br><br>
-                                
-                                TACOS, TEQUILA, TOSTADAS, <br><br>
-                                
-                                ICI COMME LA BAS C’EST  <br>
-                                <svg class="svg-jajaja" viewBox="0 0 278 95" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(230, 51, 42);">
-                                    <path d="M42.2 1.19995V73.2C42.2 84.9 32.7 94.3 21.1 94.3C16.9 94.3 12.9 93.1 9.6 90.9C3.8 87.2 0 80.6 0 73.2V28.7H19.3C19.3 28.7 19.3 60.4 19.3 73.2C19.3 74.2 20.1 75 21.1 75C22.1 75 22.9 74.2 22.9 73.2V1.19995H42.2V1.19995Z"></path>
-                                    <path d="M133.9 1.19995V73.2C133.9 84.9 124.4 94.3 112.8 94.3C108.6 94.3 104.6 93.1 101.3 90.9C95.5001 87.1 91.6001 80.6 91.6001 73.2V28.7H111C111 28.7 111 60.4 111 73.2C111 74.2 111.8 75 112.8 75C113.8 75 114.6 74.2 114.6 73.2V1.19995H133.9V1.19995Z"></path>
-                                    <path d="M225.7 1.19995V73.2C225.7 84.9 216.2 94.3 204.6 94.3C200.4 94.3 196.4 93.1 193.1 90.9C187.3 87.1 183.4 80.6 183.4 73.2V28.7H202.7V73.2C202.7 74.2 203.5 75 204.5 75C205.5 75 206.3 74.2 206.3 73.2V1.19995H225.7V1.19995Z"></path>
-                                    <path d="M179.7 19.3C178.8 8.5 169.7 0 158.7 0C147.1 0 137.7 9.4 137.6 21V21.1V93.1H156.9V64.3H160.5V93.1H179.8V21.1C179.8 20.5 179.8 19.9 179.7 19.3ZM156.9 21.1C156.9 20.1 157.7 19.3 158.7 19.3C159.7 19.3 160.5 20.1 160.5 21.1V44.4H156.9V21.1V21.1Z"></path>
-                                    <path d="M87.9999 19.3C87.0999 8.5 77.9999 0 66.9999 0C55.3999 0 45.9999 9.4 45.8999 21V21.1V93.1H65.1999V64.3H68.7999V93.1H88.0999V21.1C88.0999 20.5 88.0999 19.9 87.9999 19.3ZM65.1999 21.1C65.1999 20.1 65.9999 19.3 66.9999 19.3C67.9999 19.3 68.7999 20.1 68.7999 21.1V44.4H65.1999V21.1Z"></path>
-                                    <path d="M271.4 19.3C270.5 8.5 261.4 0 250.4 0C238.8 0 229.4 9.4 229.3 21V21.1V93.1H248.6V64.3H252.2V93.1H271.5V21.1C271.5 20.5 271.5 19.9 271.4 19.3ZM248.6 21.1C248.6 20.1 249.4 19.3 250.4 19.3C251.4 19.3 252.2 20.1 252.2 21.1V44.4H248.6V21.1V21.1Z"></path>
-                                    <path d="M271.6 3.3C271.6 1.4 273 0 274.8 0C276.6 0 278 1.4 278 3.3C278 5.2 276.6 6.6 274.8 6.6C273 6.6 271.6 5.2 271.6 3.3ZM277.6 3.3C277.6 1.6 276.4 0.3 274.8 0.3C273.2 0.3 272 1.6 272 3.3C272 5 273.2 6.3 274.8 6.3C276.4 6.3 277.6 5 277.6 3.3ZM273 3.3C273 2.1 273.7 1.2 274.8 1.2C275.7 1.2 276.2 1.7 276.4 2.5H275.9C275.8 2 275.5 1.7 274.9 1.7C274 1.7 273.6 2.4 273.6 3.3C273.6 4.2 274.1 4.9 274.9 4.9C275.6 4.9 275.9 4.5 276 3.9H276.5C276.5 4.3 276.3 4.6 276.1 4.9C275.8 5.2 275.4 5.4 274.9 5.4C273.7 5.3 273 4.5 273 3.3Z"></path>
-                                </svg>
-                            </p>
+                        <div class="jajaja-icon"onmousedown="dragElement(this)">
+                            <div class="jajaja-icon-img"  id="jajaja-icon-cactus">
+                                <div class="jajaja-icon-img-container">
+                                    <img class="jajaja-dektop-icon" id="open-modal-all-recipe" src="./public/img/PIXELS/desktop-icons/resized/cactus.png" alt="Cactus">
+                                    <div class="jajaja-icon-name" id="jajaja-icon-cactus-text"><p class="jajaja-icon-name-text">TAQUERIA</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jajaja-icon" id="open-modal-pacman"onmousedown="dragElement(this)">
+                            <div class="jajaja-icon-img">
+                                <div onclick="openPopupMusic()"  class="jajaja-icon-img-container">
+                                    <img class="jajaja-dektop-icon"  src="./public/img/PIXELS/desktop-icons/resized/gethoblaster.png" alt="ghettoblaster">
+                                    <div class="jajaja-icon-name" id="jajaja-icon-ghettoblaster-text"><p class="jajaja-icon-name-text">PLAYLIST</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jajaja-icon">
+                            <div class="jajaja-icon-img" onmousedown="dragElement(this)">
+                                <div class="jajaja-icon-img-container volume"  onclick="openSocialModal()">
+                                    <img class="jajaja-dektop-icon" src="./public/img/PIXELS/desktop-icons/resized/avocado.png" alt="Cactus">
+                                    <div class="jajaja-icon-name" id="jajaja-icon-avocat-text"><p class="jajaja-icon-name-text">INSTAGRAM</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jajaja-icon" id="jajaja-icon-1" onmousedown="dragElement(this)">
+                            <div class="jajaja-icon-img">
+                                <div class="jajaja-icon-img-container" onclick="openRecipeHit()">
+                                    <img class="jajaja-dektop-icon" id="jajaja-icon-bottle" src="./public/img/PIXELS/desktop-icons/resized/sauce.png" alt="Sauce">
+                                    <div class="jajaja-icon-name" id="jajaja-icon-bottle-text"><p class="jajaja-icon-name-text">HOW IT WORKS</p></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
-            <div class="swiper-slide">
-                <section class="container jajaja-section-history" id="jajaja-section-history">
-                    <div class="row">
-                        <div class="col-md-5 jajaja-section-history-title">
-                            <h1>NOTRE HISTOIRE</h1>
+
+            <div class="modal-recipe-wrapper popup jajaja-wrapper jajaja-draggable" onclick="bringToFront(this)">
+                <header class="modal-recipe-header jajaja-modal-header">
+                    <div class="drag-handle"></div>
+
+                    <div class="jajaja-header-btns">
+                        <span onclick="closeRecipeModal()" class="jajaja-header-circle modal-recipe-close-btn"></span>
+                        <span class="jajaja-header-circle"></span>
+                        <span class="jajaja-header-circle"></span>
+                    </div>
+
+                    <div class="line-container">
+                        <div class="line line1"></div>
+                        <div class="line line2"></div>
+                        <div class="line line3"></div>
+                      </div>
+                    
+                </header>
+                <div class="modal-recipe-content  jajaja-modal-content">
+                <iframe src="././public/recipes/alpastore.html" frameborder="0"></iframe>
+                </div>
+
+            <div class="modal-recipe-howto-wrapper">
+                <span class="modal-recipe-howto-closer">&times;</span>
+                <h3>How it works ?</h3>
+            </div>
+            </div>
+
+
+    
+            <div class="popup modal-social-wrapper jajaja-wrapper jajaja-draggable" onclick="bringToFront(this)">
+                <header class="modal-social-header jajaja-modal-header">
+                    <div class="drag-handle"></div>
+                    <div class="jajaja-header-btns">
+                        <span onclick="closeInstaModal()" class="jajaja-header-circle modal-insta-close-btn"></span>
+                        <span class="jajaja-header-circle"></span>
+                        <span class="jajaja-header-circle"></span>
+                    </div>
+
+                    <div class="line-container">
+                        <div class="line line1"></div>
+                        <div class="line line2"></div>
+                        <div class="line line3"></div>
+                      </div>
+                </header>
+                <div class="modal-social-content jajaja-modal-content">
+                <iframe src="./instafeed.html" frameborder="0" sandbox="allow-forms allow-scripts"></iframe>
+                </div>
+                <div class="modal-social-footer">
+    
+                </div>
+            </div>
+
+
+    
+            <div class="popup modal-all-recipe-wrapper jajaja-wrapper" onclick="bringToFront(this)">
+                <header class="modal-all-recipe-header jajaja-modal-header">
+                    <div class="drag-handle"></div>
+                    <span class="modal-all-recipe-close-btn jajaja-modal-closer">&times;</span>
+                    <h1 class=" modal-all-recipe-title">ALL RECIPES</h1>
+                </header>
+                <div class="modal-all-recipe-content jajaja-modal-content">
+                <iframe src="./all-recipes.html" frameborder="0"></iframe>
+                </div>
+            </div>
+    </main>
+</section>
+
+
+    <!-- JAJAJA SECTIONS TEXT -->
+    <aside>
+        <div class="close-btn">
+            <div class="close-container"><a href="#jajaja-header"> &times;</a></div>
+        </div>
+    <!-- SECTION 1) -->
+
+        <section class="jajaja-section-txt" id="jajaja-section-txt-1">
+            <div class="container">
+                <div class="row jajaja-section-txt-title">
+                    <h1 class="">JAJAJA, LA BUENA ONDA MEXICANA</h1>
+                </div>
+                <div class="row jajaja-section-txt-content">
+                    <div class="col-lg-8 text-align">
+                        <p>JAJAJA! CE SON, C’EST LA VIE.
+                            LA BUENA ONDA QUI COULE DANS LE SANG DU PAYS.<br><br>
+                            
+                            “BARRIGA LLENA, CORAZÓN CONTENTO” *<br><br>
+                            
+                            ICI, ON MANGE, ON VIT, ON RIT.<br>
+                            (TRÈS) FORT, À PLUSIEURS, À PAS D’HEURE.<br><br>
+                            
+                            TACOS, TEQUILA, TOSTADAS, <br><br>
+                            
+                            ICI COMME LA BAS C’EST  <br>
+                            <svg class="" viewBox="0 0 278 95" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(215, 37, 71);">
+                                <path d="M42.2 1.19995V73.2C42.2 84.9 32.7 94.3 21.1 94.3C16.9 94.3 12.9 93.1 9.6 90.9C3.8 87.2 0 80.6 0 73.2V28.7H19.3C19.3 28.7 19.3 60.4 19.3 73.2C19.3 74.2 20.1 75 21.1 75C22.1 75 22.9 74.2 22.9 73.2V1.19995H42.2V1.19995Z"></path>
+                                <path d="M133.9 1.19995V73.2C133.9 84.9 124.4 94.3 112.8 94.3C108.6 94.3 104.6 93.1 101.3 90.9C95.5001 87.1 91.6001 80.6 91.6001 73.2V28.7H111C111 28.7 111 60.4 111 73.2C111 74.2 111.8 75 112.8 75C113.8 75 114.6 74.2 114.6 73.2V1.19995H133.9V1.19995Z"></path>
+                                <path d="M225.7 1.19995V73.2C225.7 84.9 216.2 94.3 204.6 94.3C200.4 94.3 196.4 93.1 193.1 90.9C187.3 87.1 183.4 80.6 183.4 73.2V28.7H202.7V73.2C202.7 74.2 203.5 75 204.5 75C205.5 75 206.3 74.2 206.3 73.2V1.19995H225.7V1.19995Z"></path>
+                                <path d="M179.7 19.3C178.8 8.5 169.7 0 158.7 0C147.1 0 137.7 9.4 137.6 21V21.1V93.1H156.9V64.3H160.5V93.1H179.8V21.1C179.8 20.5 179.8 19.9 179.7 19.3ZM156.9 21.1C156.9 20.1 157.7 19.3 158.7 19.3C159.7 19.3 160.5 20.1 160.5 21.1V44.4H156.9V21.1V21.1Z"></path>
+                                <path d="M87.9999 19.3C87.0999 8.5 77.9999 0 66.9999 0C55.3999 0 45.9999 9.4 45.8999 21V21.1V93.1H65.1999V64.3H68.7999V93.1H88.0999V21.1C88.0999 20.5 88.0999 19.9 87.9999 19.3ZM65.1999 21.1C65.1999 20.1 65.9999 19.3 66.9999 19.3C67.9999 19.3 68.7999 20.1 68.7999 21.1V44.4H65.1999V21.1Z"></path>
+                                <path d="M271.4 19.3C270.5 8.5 261.4 0 250.4 0C238.8 0 229.4 9.4 229.3 21V21.1V93.1H248.6V64.3H252.2V93.1H271.5V21.1C271.5 20.5 271.5 19.9 271.4 19.3ZM248.6 21.1C248.6 20.1 249.4 19.3 250.4 19.3C251.4 19.3 252.2 20.1 252.2 21.1V44.4H248.6V21.1V21.1Z"></path>
+                                <path d="M271.6 3.3C271.6 1.4 273 0 274.8 0C276.6 0 278 1.4 278 3.3C278 5.2 276.6 6.6 274.8 6.6C273 6.6 271.6 5.2 271.6 3.3ZM277.6 3.3C277.6 1.6 276.4 0.3 274.8 0.3C273.2 0.3 272 1.6 272 3.3C272 5 273.2 6.3 274.8 6.3C276.4 6.3 277.6 5 277.6 3.3ZM273 3.3C273 2.1 273.7 1.2 274.8 1.2C275.7 1.2 276.2 1.7 276.4 2.5H275.9C275.8 2 275.5 1.7 274.9 1.7C274 1.7 273.6 2.4 273.6 3.3C273.6 4.2 274.1 4.9 274.9 4.9C275.6 4.9 275.9 4.5 276 3.9H276.5C276.5 4.3 276.3 4.6 276.1 4.9C275.8 5.2 275.4 5.4 274.9 5.4C273.7 5.3 273 4.5 273 3.3Z"></path>
+                            </svg>
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="col-md-6 jajaja-swiper-slide-left">
+                            <img class="" src="./public/img/BG/JAJAJA-BG-RED.png" alt="" srcset="">
                         </div>
-                        <div class="col-md-7 mt-5 jajaja-section-history-txt">
+                    </div>
+                </div>
+                <div class="row jajaja-section-next">
+                    <a href="#jajaja-section-txt-2"><i class="fi fi-rr-angle-circle-down" id="jajaja-1-2" ></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 2) -->
+
+        <section class="jajaja-section-txt" id="jajaja-section-txt-2">
+                <div class="jajaja-section-prev">
+                    <a href="#jajaja-section-txt-1" id="jajaja-2-1"><i class="fi fi-rr-angle-circle-up" ></i></a>
+                </div>
+            <div class="container">
+                <div class="row jajaja-section-txt-title mb-5">
+                    <h1>NOTRE HISTOIRE</h1>
+                </div>
+                <div class="row jajaja-section-txt-content">
+                    <div class="col-lg-4">
+                        <img src="./public/img/BG/JAJAJA-BG-BLUE.png" alt="" srcset="">
+                    </div>
+                    <div class="col-lg-7">
                             <p>
                                     « J’ai fait deux rencontres majeures dans ma vie : <br>
                                     Il y a 10 ans, j’ai rencontré Olivier et nous avons fondé Les Niçois (restaurant, bar, pétanque, épicerie). Il y a quinze ans, j’ai passé deux des plus belles années de ma vie, au Mexique.<br><br>
-
+    
                                     C’est un pays que j’aime par-dessus tout, car j’y ai retrouvé une version caliente de mon Sud. La richesse et la diversité de la cuisine et de l’art de vivre à la mexicaine est indescriptible, elle change d’une région à l’autre, elle évolue au fil du temps, et des gens que l’on croise.<br>
-
+    
                                     Ce mood et cette cuisine sont trop peu connues ici.<br><br>
                                     Il y a 1 an, nous avons lancé l’aventure JAJAJA. <br><br>
-
+    
                                     Au commencement, une taqueria mobile que l’on sortait en festival pour distribuer tacos al Pastor et autres Baja de camaron, puis le tout s’est transformé en un lieu sédentaire situé dans le 11ème avec aux commandes Andres mon ami Oaxaqueño. <br>
                                     Là bas se côtoient tosti esquites, trompos de al Pastor et une sélection de Mezcals et cocteles tout droit issu de mon top 10 Mexicain. <br>
                                     Et en bons épiciers, on a sorti nos 9 meilleurs produits dans des packs individuels pour apporter le Mexique chez le plus grand nombre. <br><br> 
-
+    
                                     Le fil rouge : VITAMINA-T (tacos, tostadas, tequila, tortas).<br>
                                     Mon allié : mon « compadre » Olivier.<br>
                                     Notre chef : mon ami Andres, de Oaxaca à Paris depuis 1 mois pour tenir le restaurant. <br><br>
-
+    
                                     Enchanté, Encantando »
                             </p>
-                        </div>
                     </div>
-                </section>
+                </div>
+                <div class="jajaja-section-next">
+                    <a href="#jajaja-section-txt-3"><i class="fi fi-rr-angle-circle-down" id="jajaja-2-3"></i></a>
+                </div>
             </div>
-            <div class="swiper-slide">
-                <section class="container jajaja-section-about" id="jajaja-section-about">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <h1>La Taqueria</h1>
-                            <p>7 Rue Lacharrière - 75011 - PARIS <br>
-                                Du mercredi au samedi soir - 19h à 01h</p>
-                        </div>
-                        <div class="col-md-3"></div>
+        </section>
+        
+                <!-- SECTION 3) -->
+
+                <section class="jajaja-section-txt" id="jajaja-section-txt-3">
+                    <div class="jajaja-section-prev">
+                        <a href="#jajaja-section-txt-2" id="jajaja-3-2"><i class="fi fi-rr-angle-circle-up" ></i></a>
                     </div>
-                    <div class="row">
+                <div class="container">
+                    <div class="row jajaja-section-txt-title">
+                        <h1>LA TAQUERIA</h1>
+                    </div>
+                    <div class="row jajaja-section-txt-content">
+                            <div class=" col-lg-6 jajaja-bg-color-block pb-5 text-center">
+                                <h2 class="jajaja-fts-2">What we do </h2>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor magni excepturi, ab in numquam incidunt quas est modi animi provident qui, cum eligendi quis recusandae quaerat labore natus explicabo amet. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati nulla quos alias ut, mollitia quo dolores voluptatibus modi sunt, expedita quas ipsa maiores sequi magnam eius, vitae repellat placeat nobis. <br> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod praesentium voluptatum dolor sequi perferendis, est libero labore facilis <br> similique, quas, a dolorem provident error </p>
+                            </div>
+                            <div class="col-lg-6 jajaja-swiper-slide-mid pb-5 text-center">
+                                <h2 class="">How we are</h2>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor magni excepturi, ab in numquam incidunt quas est modi animi provident qui, cum eligendi quis recusandae quaerat labore natus explicabo amet. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati nulla quos alias ut, mollitia quo dolores voluptatibus modi sunt, expedita quas ipsa maiores sequi magnam eius, vitae repellat placeat nobis. <br> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod praesentium voluptatum dolor sequi perferendis, est libero labore facilis <br> similique, quas, a dolorem provident error </p>
+                            </div>
+                    </div>
+                    <div class="row mb-3">
                         <div class="col-md-7">
-            
+                            <img class="" src="./public/img/BG/bg-kodak.png" alt="" srcset="">
                         </div>
                         <div class="col-md-5">
-                            <h2>What we do </h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor magni excepturi, ab in numquam incidunt quas est modi animi provident qui, cum eligendi quis recusandae quaerat labore natus explicabo amet. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati nulla quos alias ut, mollitia quo dolores voluptatibus modi sunt, expedita quas ipsa maiores sequi magnam eius, vitae repellat placeat nobis. <br> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod praesentium voluptatum dolor sequi perferendis, est libero labore facilis <br> similique, quas, a dolorem provident error maiores numquam delectus quae perspiciatis vel!</p>
+                            <img class='jajaja-img-max-width'src="./public/img/BG/JAJAJA-BG-ORANGE.png" alt="" srcset="">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-5"> 
-                            <h2>How we are</h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor magni excepturi, ab in numquam incidunt quas est modi animi provident qui, cum eligendi quis recusandae quaerat labore natus explicabo amet. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati nulla quos alias ut, mollitia quo dolores voluptatibus modi sunt, expedita quas ipsa maiores sequi magnam eius, vitae repellat placeat nobis. <br> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod praesentium voluptatum dolor sequi perferendis, est libero labore facilis <br> similique, quas, a dolorem provident error </p>
-                        </div>
-                        <div class="col-md-7"></div>
+                    <div class="jajaja-section-next">
+                        <i class="fi fi-rr-angle-circle-down"></i>
                     </div>
-                </section>
-            </div>
-            ...
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-        
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
-        </div>
-        <div class="modal-all-recipe-wrapper">
-            <header class="modal-all-recipe-header">
-                <h1 class=" modal-all-recipe-title changing-color-txt">ALL RECIPES</h1>
-                <span class="modal-all-recipe-close-btn">&times;</span>
-            </header>
-            <div class="modal-all-recipe-content">
-            <iframe src="./all-recipes.html" frameborder="0"></iframe>
-            </div>
-        </div>
+                </div>
+            </section>
 
-    <script src="./public/js/colors.js"></script>
-    <script src="./public/js/nav.js"></script>
-    <script src="./public/js/app.js"></script>
-    <script src="./public/js/modal.js"></script>
-    <script src="./public/js/caroussel.js"></script>
+
+
+
+    <!-- POPUP PACMAN -->
+
+    <div class="popup-pacman popup popup-pacman-wrapper box" onclick="bringToFront(this)">
+        <header class="modal-pacman-header">
+            <div class="drag-handle"></div>
+            <div class="jajaja-header-btns">
+                <span class="jajaja-header-circle close-btn" id="pacman-close-btn"></span>
+                <span class="jajaja-header-circle"></span>
+                <span class="jajaja-header-circle"></span>
+            </div>
+        </header>
+        <div class="jajaja-popup-iframe">
+            <iframe src="./public/pacman/pacman.html" frameborder="0"></iframe>
+        </div>
+    </div>  
+
+    <!-- POPUP CONTACT -->
+    <div class="popup-contact popup-contact-wrapper popup jajaja-draggable box" onclick="bringToFront(this)">
+        <header class="modal-contact-header">
+            <div class="drag-handle"></div>
+            <div class="jajaja-header-btns">
+                <span onclick="closePopupContact()" class="jajaja-header-circle close-btn" id="contact-close-btn" ></span>
+                <span class="jajaja-header-circle"></span>
+                <span class="jajaja-header-circle"></span>
+            </div>
+        </header>
+            <div class="jajaja-contact-content">
+                <h2>PARTAGE TA BUENA ONDA !!</h2>
+                <form name="contactForm" onsubmit="return validateForm()" method="post">
+                    <input type="text" id="name" name="name" placeholder="nom et prenom"><br><br>
+            
+                    <input type="email" id="email" name="email" placeholder="email"><br><br>
+            
+                    <textarea id="message" name="message" rows="5" cols="30" placeholder="votre message"></textarea><br><br>
+            
+                    <input class="jajaja-input-btn" type="submit" value="Envoyer">
+                </form>
+            </div>
+    </div>  
+
+    <div class="popup-contacts popup popup-contacts-wrappe jajaja-draggable box" onclick="bringToFront(this)">
+        <header class="modal-contacts-header">
+            <div class="drag-handle"></div>
+            <div class="jajaja-header-btns">
+                <span class="jajaja-header-circle close-btn" id="contacts-close-btn" onclick="closePopupContacts()"></span>
+                <span class="jajaja-header-circle"></span>
+                <span class="jajaja-header-circle"></span>
+            </div>
+        </header>
+            <div class="jajaja-contacts-content">
+                <div class="jajaja-contacts-section">    
+                    <a href="#"><img src="./public/img/instagram.svg" alt=""><p>Notre instagram</p></a>
+                </div>
+                <div class="jajaja-contacts-section">
+                    <a href="#" onclick="contactTrigger()" id="#jajaja-mail-trigger"><img src="./public/img/envelope.svg" alt=""><p>Contactez-nous</p></a>
+                </div>
+            </div>
+    </div>  
+
+    <!-- POPUP MUSIC -->
+
+    <div class="popup-music popup-music-wrapper jajaja-draggable box popup" onclick="bringToFront(this)" >
+        <header class="modal-music-header">
+            <div class="drag-handle"></div>
+            <div class="jajaja-header-btns">
+                <span class="jajaja-header-circle close-btn" id="music-close-btn" onclick="closePopupMusic()"></span>
+                <span class="jajaja-header-circle"></span>
+                <span class="jajaja-header-circle"></span>
+            </div>
+            <div class="line-container">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+              </div>
+        </header>
+            <div class="jajaja-music-content">
+                <h2>JAJAJA FM</h2>
+                <div>
+                    <canvas id="audioCanvas"></canvas>
+
+                    <audio id="audioPlayer">
+                      <source id="audioSource" src="./public/audio/Mexican 2.wav" type="audio/mpeg">
+                    </audio>
+                    <br>
+                    <div class="jajaja-track-infos">
+                        <div class="jajaja-track-time">
+                            00.00 / 00.00
+                        </div>
+                        <div class="jajaja-track-info">
+                            <p id="jajaja-track-name">Track Name/track artist</p>
+                            <p id="jajaja-track-playlist">Track playlist</p>
+                        </div>
+
+                    </div>
+                    <div class="jajaja-btn-audioplayer">
+                        <div class="jajaja-controler-btn-group">
+                            <button id="prevButton" class="jajaja-btn-controler" onclick="previousTrack()"><i class="fi fi-rr-rewind"></i></button>
+                            <button id="playPauseButton" onclick="togglePlay()"><i class="fi fi-rr-pause"></i></button>
+                            <button id="nextButton" onclick="nextTrack()"><i class="fi fi-rr-forward"></i></button>
+                        </div>
+                        <div class="jajaja-mute-btn-group">
+                            <button id="mute-btn"onclick="toggleMute()"><i class="fi fi-rr-volume"></i></button>
+                            <button onclick="shareAudio()"><i class="fi fi-rr-share-square"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="jajaja-playlists-list">
+                        <div class="jajaja-playlist-item">
+                            <p>Playlist</p>
+                        </div>
+                        <div class="jajaja-playlist-item">
+                            <p>Playlist</p>
+                        </div>
+                        <div class="jajaja-playlist-item">
+                            <p>Playlist</p>
+                        </div>
+                        <div class="jajaja-playlist-item">
+                            <p>Playlist</p>
+                        </div>
+                        <div class="jajaja-playlist-item">
+                            <p>Playlist</p>
+                        </div>
+                        <div class="jajaja-playlist-item">
+                            <p>Playlist</p>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+    </div>  
+
+    <!-- /POPUP HOW IT WORKS -->
+
+    <div class="popup jajaja-draggable box" id="popup-hit" onclick="bringToFront(this)">
+        <header class="popup-header" id="header-hit">
+            <div class="drag-handle"></div>
+            <div class="jajaja-header-btns">
+                <span class="jajaja-header-circle close-btn" id="hit-close-btn" onclick="closeRecipeHit()"></span>
+                <span class="jajaja-header-circle"></span>
+                <span class="jajaja-header-circle"></span>
+            </div>
+            <div class="line-container">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+              </div>
+        </header>
+        <div class="popup-content">
+            <h2>How it works</h2>
+        </div>
+    </div>
+
+    <!-- POPUP RIGHT CLICK BIS -->
+
+    <div class="box popup" id="popup-tools"onclick='bringToFront(this)'>
+        <header  id="popup-tools-header">
+            <a id='tools-close-btn' href="#" >&times;</a>
+        </header>
+        <div class="popup-content">
+            <div id="popup-tools-icons">
+                <div id="jajaja-trigger-popup-tools-clock" class="popup-tools-icon"><img src="./public/img/PIXELS/clock.png" alt=""></div>
+                <div class="popup-tools-icon" id="jajaja-trigger-popup-tools-bg"><img src="./public/img/PIXELS/crayon.png" alt="" onclick="triggerBagroundPopup()"></div>
+                <div class="popup-tools-icon"><img src="./public/img/PIXELS/ecrou.png" alt=""></div>
+                <div class="popup-tools-icon" onclick="openPopupMusic()" ><img src="./public/img/PIXELS/ghettoblaster-big-png.png" alt=""></div>
+                <div class="popup-tools-icon">...
+                </div>
+            </div>
+        </div>
+        <div class="popup-background box popup jajaja-draggable"onclick='bringToFront(this)'>
+            <header class="modal-bg-header jajaja-popup-header">
+                <div class="drag-handle"></div>
+                <div class="jajaja-header-btns">
+                    <span class="jajaja-header-circle" onclick="closePopupToolsBg()" id="modal-bg-close"></span>
+                    <span class="jajaja-header-circle"></span>
+                    <span class="jajaja-header-circle"></span>
+                </div>
+                <div class="line-container">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                  </div>
+            </header>
+            <div class="popup-container popup-background-container">
+                <div class="row">
+                    <div class="jajaja-background">
+                        <div class="jajaja-background-container" id="jajaja-bg-1">
+                        </div>
+                    </div>
+                    <div class="jajaja-background">
+                        <div class="jajaja-background-container" id="jajaja-bg-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="jajaja-background">
+                        <div class="jajaja-background-container" id="jajaja-bg-3">
+                        </div>
+                    </div>
+                    <div class="jajaja-background">
+                        <div class="jajaja-background-container" id="jajaja-bg-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="jajaja-background">
+                        <div class="jajaja-background-container" id="jajaja-bg-5">
+                        </div>
+                    </div>
+                    <div class="jajaja-background">
+                        <div class="jajaja-background-container" id="jajaja-bg-6">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="jajaja-background">
+                        <div class="jajaja-background-container" id="jajaja-bg-7">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="jajaja-popup-menu"></div>
+        </div>
+        <div class="box popup" id="popup-clock" onclick='bringToFront(this)'>
+            <div  id="popup-clock-header">
+                <a id='popup-clock-close-btn' onclick="closePopupToolsClock()" href="#" >&times;</a>
+            </div>
+            <div class="popup-content">
+                <div id="popup-clock-icons">
+                    <div class="popup-clock-icon" onclick="afficherHeureFrance()"><img src="./public/img/PIXELS/france.png" alt=""></div>
+                    <div class="popup-clock-icon" onclick="afficherHeureMexique()"><img src="./public/img/PIXELS/mexico.png" alt=""></div>
+                    <div class="popup-clock-icon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+    
+
+    <script type="text/javascript" src="./public/js/modal.js" async></script>
+    <script type="text/javascript"  src="./public/js/app.js" async></script>
+    <script type="text/javascript"  src="./public/js/popup.js" async></script>
+    <script type="text/javascript" src="./public/js/colors.js" async></script>
+    <script type="text/javascript" src="./public/js/nav.js" async></script>
+    <script type="text/javascript" src="./public/js/caroussel.js" async></script>
+    <script src="./public/js/features.js"></script>
+    <script type="text/javascript" src="./public/js/music.js" async></script>
+    <script>
+
+                // CHANGE BACKGROUND 
+
+const bg1 = document.querySelector('#jajaja-bg-1');
+const bg2 = document.querySelector('#jajaja-bg-2');
+const bg3 = document.querySelector('#jajaja-bg-3');
+const bg4 = document.querySelector('#jajaja-bg-4');
+const bg5 = document.querySelector('#jajaja-bg-5');
+const bg6 = document.querySelector('#jajaja-bg-6');
+const bg7 = document.querySelector('#jajaja-bg-7');
+
+
+const jajajaSection = document.querySelector('.jajaja-section-1')
+
+bg1.addEventListener('click',()=>{
+    jajajaSection.classList.add('bg-1');
+    jajajaSection.classList.remove('bg-2','bg-3','bg-4','bg-5','bg-6','bg-7');
+    wrapper.classList.remove('wrapper-grabbed');
+    wrapper.classList.remove('wrapper-cover');
+
+
+});
+
+bg2.addEventListener('click',()=>{
+    jajajaSection.classList.add('bg-2');
+    jajajaSection.classList.remove('bg-1','bg-3','bg-4','bg-5','bg-6','bg-7');
+    wrapper.classList.remove('wrapper-grabbed');
+    wrapper.classList.remove('wrapper-cover');
+
+
+});
+
+bg3.addEventListener('click',()=>{
+    jajajaSection.classList.add('bg-3');
+    jajajaSection.classList.remove('bg-2','bg-1','bg-4','bg-5','bg-6','bg-7');
+    wrapper.classList.remove('wrapper-grabbed');
+    wrapper.classList.remove('wrapper-cover');
+
+});
+
+bg4.addEventListener('click',()=>{
+    jajajaSection.classList.add('bg-4');
+    jajajaSection.classList.remove('bg-2','bg-3','bg-1','bg-5','bg-6','bg-7');
+    wrapper.classList.remove('wrapper-grabbed');
+    wrapper.classList.remove('wrapper-cover');
+
+});
+
+bg5.addEventListener('click',()=>{
+    jajajaSection.classList.add('bg-5');
+    jajajaSection.classList.remove('bg-2','bg-3','bg-4','bg-1','bg-6','bg-7');
+    wrapper.classList.remove('wrapper-grabbed');
+    wrapper.classList.add('wrapper-cover');
+
+
+});
+
+bg6.addEventListener('click',()=>{
+    jajajaSection.classList.add('bg-6');
+    jajajaSection.classList.remove('bg-2','bg-3','bg-4','bg-5','bg-1','bg-7');
+    wrapper.classList.add('wrapper-grabbed');
+    wrapper.classList.remove('wrapper-cover');
+
+});
+
+bg7.addEventListener('click',()=>{
+    jajajaSection.classList.add('bg-7');
+    jajajaSection.classList.remove('bg-2','bg-3','bg-4','bg-5','bg-1','bg-6');
+    wrapper.classList.remove('wrapper-grabbed');
+    wrapper.classList.remove('wrapper-cover');
+
+});
+
+
+
+const popups = document.querySelectorAll('.jajaja-draggable');
+
+popups.forEach(popup => {
+  const handle = popup.querySelector('.drag-handle');
+  handle.addEventListener('mousedown', mouseDown);
+});
+
+function mouseDown(e) {
+  const handle = e.target;
+  const popup = handle.parentNode.parentNode;
+
+  const startX = e.clientX - popup.offsetLeft;
+  const startY = e.clientY - popup.offsetTop;
+  
+  // On ajoute des écouteurs d'événement sur la page pour suivre le mouvement de la souris
+  document.addEventListener('mousemove', mouseMove);
+  document.addEventListener('mouseup', mouseUp);
+  
+  // Fonction appelée lorsqu'on bouge la souris
+  function mouseMove(e) {
+    // On calcule la nouvelle position de la popup
+    const newLeft = e.clientX - startX;
+    const newTop = e.clientY - startY;
+    
+    // On applique la nouvelle position à la popup
+    popup.style.left = newLeft + 'px';
+    popup.style.top = newTop + 'px';
+  }
+
+
+
+  
+  // Fonction appelée lorsqu'on relâche le clic de souris
+  function mouseUp() {
+    // On supprime les écouteurs d'événement sur la page
+    document.removeEventListener('mousemove', mouseMove);
+    document.removeEventListener('mouseup', mouseUp);
+  }
+}
+
+const preloader = document.getElementById('preloader');
+const images = preloader.getElementsByTagName('img');
+const delay = 200; // délai en millisecondes entre chaque image    
+
+
+
+
+
+
+
+        
+
+    </script>
+
+
 </body>
 </html>
