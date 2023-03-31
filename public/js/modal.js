@@ -1,104 +1,24 @@
-const wrapper = document.querySelector(".wrapper"),
-header = wrapper.querySelector("header");
-function onDrag({movementX, movementY}){
-  let getStyle = window.getComputedStyle(wrapper);
-  let leftVal = parseInt(getStyle.left);
-  let topVal = parseInt(getStyle.top);
-  wrapper.style.left = `${leftVal + movementX}px`;
-  wrapper.style.top = `${topVal + movementY}px`;
-}
-header.addEventListener("mousedown", ()=>{
-  header.classList.add("active");
-  header.addEventListener("mousemove", onDrag);
-});
-document.addEventListener("mouseup", ()=>{
-  header.classList.remove("active");
-  header.removeEventListener("mousemove", onDrag);
-});
+ 
+        
+        //POPUP WRAPPER
+        const jajajaWrapper = document.querySelector('.jajaja-wrapper');
+        const zIndex = 1;
+
+        function openWrapper() {
+            jajajaWrapper.style.display = 'block';
+            bringToFront(popup);
+        }
+
+        function closeWrapper() {
+          jajajaWrapper.style.display = 'none';
+        }
 
 
-// MODAL
 
-let closeModalBtn = document.querySelector('.close-btn');
-let openModalBtn = document.querySelector('.open-modal-btn');
-let modal = document.querySelector('.wrapper');
 
-function openModal() {
-    modal.style.visibility = 'visible';
-    modal.style.zIndex = 100000000;
-};
 
-function closeModal() {
-    modal.style.visibility = 'hidden';
-};
 
-openModalBtn.addEventListener('click', openModal);
-closeModalBtn.addEventListener('click',closeModal);
 
-// MODAL RECIPE
-const openModalRecipeBtn = document.querySelector('#open-modal-recipe')
-const closeModalRecipeBtn = document.querySelector('.modal-recipe-close-btn')
-const modalRecipeWrapper = document.querySelector(".modal-recipe-wrapper"),
-ModalRecipeHeader = modalRecipeWrapper.querySelector(".modal-recipe-header");
-function onDrag2({movementX, movementY}){
-  let getModalRecipeStyle = window.getComputedStyle(modalRecipeWrapper);
-  let leftModalRecipeVal = parseInt(getModalRecipeStyle.left);
-  let topModalRecipeVal = parseInt(getModalRecipeStyle.top);
-  modalRecipeWrapper.style.left = `${leftModalRecipeVal + movementX}px`;
-  modalRecipeWrapper.style.top = `${topModalRecipeVal + movementY}px`;
-}
-ModalRecipeHeader.addEventListener("mousedown", ()=>{
-    ModalRecipeHeader.classList.add("active");
-    ModalRecipeHeader.addEventListener("mousemove", onDrag2);
-});
-document.addEventListener("mouseup", ()=>{
-    ModalRecipeHeader.classList.remove("active");
-    ModalRecipeHeader.removeEventListener("mousemove", onDrag2);
-});
-
-function openRecipeModal() {
-    modalRecipeWrapper.style.visibility = 'visible';
-};
-
-function closeRecipeModal() {
-    modalRecipeWrapper.style.visibility = 'hidden';
-};
-
-openModalRecipeBtn.addEventListener('click', openRecipeModal);
-closeModalRecipeBtn.addEventListener('click',closeRecipeModal);
-
-// MODAL SOCIAL
-
-const openModalSocialBtn = document.querySelector('#open-modal-social')
-const closeModalSocialBtn = document.querySelector('.modal-social-close-btn')
-const modalSocialWrapper = document.querySelector(".modal-social-wrapper"),
-ModalSocialHeader = modalSocialWrapper.querySelector(".modal-social-header");
-function onDrag3({movementX, movementY}){
-  let getModalSocialStyle = window.getComputedStyle(modalSocialWrapper);
-  let leftModalSocialVal = parseInt(getModalSocialStyle.left);
-  let topModalSocialVal = parseInt(getModalSocialStyle.top);
-  modalSocialWrapper.style.left = `${leftModalSocialVal + movementX}px`;
-  modalSocialWrapper.style.top = `${topModalSocialVal + movementY}px`;
-}
-ModalSocialHeader.addEventListener("mousedown", ()=>{
-    ModalSocialHeader.classList.add("active");
-    ModalSocialHeader.addEventListener("mousemove", onDrag3);
-});
-document.addEventListener("mouseup", ()=>{
-    ModalSocialHeader.classList.remove("active");
-    ModalSocialHeader.removeEventListener("mousemove", onDrag3);
-});
-
-function openSocialModal() {
-    modalSocialWrapper.style.visibility = 'visible';
-};
-
-function closeSocialModal() {
-    modalSocialWrapper.style.visibility = 'hidden';
-};
-
-openModalSocialBtn.addEventListener('click', openSocialModal);
-closeModalSocialBtn.addEventListener('click',closeSocialModal);
 
 // MODAL ALLRECIPE
 
@@ -106,109 +26,94 @@ const openModalAllRecipeBtn = document.querySelector('#open-modal-all-recipe')
 const closeModalAllRecipeBtn = document.querySelector('.modal-all-recipe-close-btn')
 const modalAllRecipeWrapper = document.querySelector(".modal-all-recipe-wrapper"),
 ModalAllRecipeHeader = modalAllRecipeWrapper.querySelector(".modal-all-recipe-header");
-function onDrag4({movementX, movementY}){
-  let getModalAllRecipeStyle = window.getComputedStyle(modalAllRecipeWrapper);
-  let leftModalAllRecipeVal = parseInt(getModalAllRecipeStyle.left);
-  let topModalAllRecipeVal = parseInt(getModalAllRecipeStyle.top);
-  modalAllRecipeWrapper.style.left = `${leftModalAllRecipeVal + movementX}px`;
-  modalAllRecipeWrapper.style.top = `${topModalAllRecipeVal + movementY}px`;
-}
-ModalAllRecipeHeader.addEventListener("mousedown", ()=>{
-    ModalAllRecipeHeader.classList.add("active");
-    ModalAllRecipeHeader.addEventListener("mousemove", onDrag4);
-});
-document.addEventListener("mouseup", ()=>{
-    ModalAllRecipeHeader.classList.remove("active");
-    ModalAllRecipeHeader.removeEventListener("mousemove", onDrag4);
-});
 
 function openAllRecipeModal() {
-    modalAllRecipeWrapper.style.visibility = 'visible';
+    modalAllRecipeWrapper.style.display = 'block';
+    bringToFront(popup);
 };
 
 function closeAllRecipeModal() {
-    modalAllRecipeWrapper.style.visibility = 'hidden';
+    modalAllRecipeWrapper.style.display = 'none';
 };
 
 openModalAllRecipeBtn.addEventListener('click', openAllRecipeModal);
 closeModalAllRecipeBtn.addEventListener('click',closeAllRecipeModal);
 
-// MODAL MUSIC
+// CHANGE VUE OF POPUP
 
-const openModalMusicBtn = document.querySelector('#open-modal-music')
-const closeModalMusicBtn = document.querySelector('.modal-music-close-btn')
-const modalMusicWrapperIframe = document.querySelector(".modal-music-wrapper iframe")
-const modalMusicWrapper = document.querySelector(".modal-music-wrapper"),
-ModalMusicHeader = modalMusicWrapper.querySelector(".modal-music-header");
-function onDrag5({movementX, movementY}){
-  let getModalMusicStyle = window.getComputedStyle(modalMusicWrapper);
-  let leftModalMusicVal = parseInt(getModalMusicStyle.left);
-  let topModalMusicVal = parseInt(getModalMusicStyle.top);
-  modalMusicWrapper.style.left = `${leftModalMusicVal  + movementX}px`;
-  modalMusicWrapper.style.top = `${topModalMusicVal + movementY}px`;
-}
-ModalMusicHeader.addEventListener("mousedown", ()=>{
-    ModalMusicHeader.classList.add("active");
-    ModalMusicHeader.addEventListener("mousemove", onDrag5);
-});
-document.addEventListener("mouseup", ()=>{
-    ModalMusicHeader.classList.remove("active");
-    ModalMusicHeader.removeEventListener("mousemove", onDrag5);
-});
 
-function openMusicModal() {
-    modalMusicWrapper.style.visibility = 'visible';
+
+
+
+
+// MODAL SOCIAL
+
+const modalSocialWrapper = document.querySelector(".modal-social-wrapper"),
+ModalSocialHeader = modalSocialWrapper.querySelector(".modal-social-header");
+
+function openSocialModal() {
+    modalSocialWrapper.style.display = 'block';
 };
 
-function closeMusicModal() {
-    modalMusicWrapper.style.visibility = 'hidden';
+function closeSocialModal() {
+    modalSocialWrapper.style.display = 'none';
 };
 
-openModalMusicBtn.addEventListener('click', openMusicModal);
-closeModalMusicBtn.addEventListener('click',closeMusicModal);
+openModalSocialBtn.addEventListener('click', openSocialModal);
+closeModalSocialBtn.addEventListener('click',closeSocialModal);
 
-// MODAL GETS OVER MODALS
 
-wrapper.addEventListener('click', ()=>{
-    wrapper.style.zIndex = 1000;
-    wrapper.style.position = 'relative';
-    modalRecipeWrapper.style.zIndex = 'auto';
-    modalSocialWrapper.style.zIndex = 'auto';
-    modalAllRecipeWrapper.style.zIndex = 'auto';
-    modalMusicWrapper.style.zIndex = 'auto';
-});
+// MODAL PACMAN
 
-modalRecipeWrapper.addEventListener('click', ()=>{
-    modalRecipeWrapper.style.zIndex = 1000;
-    wrapper.style.zIndex = 'auto';
-    modalSocialWrapper.style.zIndex = 'auto';
-    modalAllRecipeWrapper.style.zIndex = 'auto';
-    modalMusicWrapper.style.zIndex = 'auto';
-});
 
-modalSocialWrapper.addEventListener('click', ()=>{
-    modalSocialWrapper.style.zIndex = 1000;
-    wrapper.style.zIndex = 'auto';
-    modalRecipeWrapper.style.zIndex = 'auto';
-    modalAllRecipeWrapper.style.zIndex = 'auto';
-    modalMusicWrapper.style.zIndex = 'auto';
-});
 
-modalAllRecipeWrapper.addEventListener('click', ()=>{
-    modalAllRecipeWrapper.style.zIndex = 1000;
-    wrapper.style.zIndex = 'auto';
-    modalRecipeWrapper.style.zIndex = 'auto';
-    modalSocialWrapper.style.zIndex = 'auto';
-    modalMusicWrapper.style.zIndex = 'auto';
-});
+const openModalPacmanBtn = document.querySelector('#open-modal-pacman')
+const closeModalPacmanBtn = document.querySelector('#pacman-close-btn')
+const modalPacmanWrapper = document.querySelector(".popup-pacman-wrapper"),
+modalPacmanHeader = modalPacmanWrapper.querySelector(".modal-pacman-header");
 
-modalMusicWrapperIframe.addEventListener('click', ()=>{
-    modalMusicWrapperIframe.style.zIndex = 10000;
-    wrapper.style.zIndex = 'auto';
-    modalRecipeWrapper.style.zIndex = 'auto';
-    modalSocialWrapper.style.zIndex = 'auto';
-    modalAllRecipeWrapper.style.zIndex = 'auto';
-});
+
+function openPacmanModal() {
+    modalPacmanWrapper.style.display = 'block';
+    bringToFront(popup);
+};
+
+function closePacmanModal() {
+    modalPacmanWrapper.style.display = 'none';
+};
+
+openModalPacmanBtn.addEventListener('click', openSocialModal);
+closeModalPacmanBtn.addEventListener('click',closeSocialModal);
+
+
+// MODAL HOW IT WORKS 
+
+const hIWModal = document.querySelector('.modal-recipe-howto-wrapper');
+const openHIWModal = document.querySelector('.question-mark-icon');
+const closeHIWModal = document.querySelector('.modal-recipe-howto-closer');
+
+
+openHIWModal.addEventListener("click", () => {
+    hIWModal.style.display = 'block';
+    bringToFront(popup);});
+
+closeHIWModal.addEventListener('click',() =>{
+    hIWModal.style.display = 'none';
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
